@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento | Barbearia</title>
+    <style>
+        /* Paleta sofisticada: Cimento Queimado, Grafite e Luzes suaves */
+        :root {
+            --bg-color: #1a1a1a;
+            --container-bg: #2b2b2b;
+            --text-main: #f0f0f0;
+            --accent-glow: #e6c27a; /* Tom dourado suave/iluminação quente */
+            --border-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: radial-gradient(circle at top, #2a2a2a, #121212);
+        }
+
+        .container {
+            background-color: var(--container-bg);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(230, 194, 122, 0.1);
+            border: 1px solid #3d3d3d;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-glow);
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #a0a0a0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            background-color: #1f1f1f;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 8px rgba(230, 194, 122, 0.3);
+        }
+
+        /* Estrutura para colocar Data e Hora lado a lado no celular */
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+        .row .form-group {
+            flex: 1;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--accent-glow);
+            color: #1a1a1a;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-top: 10px;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button:hover {
+            background-color: #d4ae64;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Sua Barbearia</h1>
+            <p>Agendamento Exclusivo</p>
+        </div>
+
+        <form id="agendamentoForm">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="servico">Serviço Desejado</label>
+                <select id="servico" required>
+                    <option value="" disabled selected>Selecione um serviço</option>
+                    <option value="Corte Cabelo">Corte (Tesoura ou Máquina)</option>
+                    <option value="Barba">Barboterapia</option>
+                    <option value="Corte e Barba">Corte + Barba (Combo)</option>
+                    <option value="Sobrancelha">Alinhamento de Sobrancelha</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="data">Data</label>
+                    <input type="date" id="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="horario">Horário</label>
+                    <select id="horario" required>
+                        <option value="" disabled selected>Hora</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pagamento">Forma de Pagamento</label>
+                <select id="pagamento" required>
+                    <option value="" disabled selected>Como deseja pagar?</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Cartão de Débito">Cartão de Débito</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                </select>
+            </div>
+
+            <button type="submit">Solicitar Horário</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('agendamentoForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede a página de recarregar
+
+            // 1. Coleta os dados do formulário
+            const nome = document.getElementById('nome').value;
+            const servico = document.getElementById('servico').value;
+            const dataRaw = document.getElementById('data').value;
+            const horario = document.getElementById('horario').value;
+            const pagamento = document.getElementById('pagamento').value;
+
+            // Formata a data de AAAA-MM-DD para DD/MM/AAAA
+            const dataParts = dataRaw.split('-');
+            const dataFormatada = `${dataParts[2]}/${dataParts[1]}/${dataParts[0]}`;
+
+            // 2. Monta a mensagem que será enviada
+            const mensagem = `*NOVA SOLICITAÇÃO DE AGENDAMENTO* ✂️\n\n*Cliente:* ${nome}\n*Serviço:* ${servico}\n*Data:* ${dataFormatada}\n*Horário:* ${horario}\n*Pagamento:* ${pagamento}\n\n_Aguardo confirmação do horário!_`;
+
+            // 3. Configura o número do seu WhatsApp (Coloque o número da barbearia aqui, apenas números, com código do país 55 e DDD)
+            const numeroWhatsApp = "5521999999999"; // SUBSTITUA PELO SEU NÚMERO
+
+            // 4. Cria o link da API do WhatsApp e redireciona
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank'); // Abre em nova aba/janela
+        });
+    </script>
+</body>
+</html>
