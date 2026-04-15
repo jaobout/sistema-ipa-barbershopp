@@ -694,6 +694,101 @@
         width: 100%;
       }
     }
+  /* ===== SERVIÇOS PREMIUM ===== */
+.group-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.group-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+}
+
+.group-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.06), transparent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.group-card:hover::after {
+  opacity: 1;
+}
+
+.price {
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(255,179,71,0.12);
+  border: 1px solid rgba(255,179,71,0.25);
+}
+
+/* ===== AVALIAÇÕES PREMIUM ===== */
+.rating-box {
+  background: linear-gradient(180deg, rgba(255,179,71,0.15), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255,179,71,0.3);
+}
+
+.rating-score {
+  font-size: 48px;
+  letter-spacing: -1px;
+}
+
+.review-card {
+  transition: transform .2s ease, background .2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ===== BOTÕES MAIS PREMIUM ===== */
+.button {
+  letter-spacing: 0.02em;
+}
+
+.button-whatsapp {
+  font-size: 16px;
+  box-shadow: 0 20px 40px rgba(37,211,102,0.25);
+}
+
+.button-whatsapp:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ===== FORM PREMIUM ===== */
+form {
+  position: relative;
+}
+
+form::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,122,24,0.2), rgba(42,167,214,0.2));
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ===== EQUIPE MAIS ELEGANTE ===== */
+.team-card {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.team-photo {
+  border-radius: 20px;
+}
   </style>
 </head>
 <body>
