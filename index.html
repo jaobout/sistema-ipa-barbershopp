@@ -323,6 +323,51 @@
       backdrop-filter: blur(12px);
     }
 
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .gallery-card {
+      position: relative;
+      min-height: 320px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 20px;
+      background: linear-gradient(180deg, transparent, rgba(8,10,12,0.88));
+    }
+
+    .gallery-overlay strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .gallery-overlay span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 90%;
+    }
+
     .catalog-shell {
       position: relative;
       overflow: hidden;
@@ -771,6 +816,7 @@
 
     @media (max-width: 920px) {
       .hero-grid,
+      .gallery-grid,
       .review-grid,
       .info-grid,
       .service-groups,
@@ -882,6 +928,29 @@
             <div><strong>Endereço</strong><br>Rua Prudente de Morais, 167, Loja A<br>Ipanema, Rio de Janeiro - RJ</div>
             <div><strong>Idiomas</strong><br>Português, Español, English</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Ambiente da barbearia</div>
+      <div class="card">
+        <div class="gallery-grid">
+          <article class="gallery-card">
+            <img src="img/barbearia-1.jpg" alt="Interior da IPA Barber Shop" class="gallery-image">
+            <div class="gallery-overlay">
+              <strong>Ambiente premium</strong>
+              <span>Um espaço moderno, confortável e pensado para elevar a experiência do cliente em Ipanema.</span>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="img/barbearia-2.jpg" alt="Detalhes da IPA Barber Shop" class="gallery-image">
+            <div class="gallery-overlay">
+              <strong>Estilo & presença</strong>
+              <span>Design autoral, atendimento de alto padrão e uma atmosfera que une elegância com identidade carioca.</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
