@@ -788,6 +788,78 @@
       line-height: 1.55;
     }
 
+    .product-shell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-card {
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+      overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      display: block;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    }
+
+    .product-body {
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .product-body strong {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .product-body span {
+      font-size: 12px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .product-price {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,179,71,0.12);
+      border: 1px solid rgba(255,179,71,0.22);
+      color: var(--sand);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .product-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     .footer {
       text-align: center;
       color: var(--muted);
@@ -815,6 +887,9 @@
     }
 
     @media (max-width: 920px) {
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
       .hero-grid,
       .gallery-grid,
       .review-grid,
@@ -831,6 +906,9 @@
     }
 
     @media (max-width: 640px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
       .site {
         padding-inline: 12px;
       }
@@ -905,6 +983,9 @@
     </div>
 
     <section class="hero">
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="button button-outline" href="#produtos">Ver catálogo de itens</a>
+      </div>
       <div class="hero-grid">
         <div>
           <div class="tag">IPA Barber Shop · Ipanema</div>
@@ -1208,6 +1289,221 @@
     </section>
 
     <section class="section">
+      <div class="section-title">Serviços organizados</div>
+      <div class="card">
+        <div class="service-groups">
+          <div style="display:grid; gap:16px;">
+            <section class="group-card">
+              <h3>Cortes</h3>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Corte Masculino</strong>
+                  <small>30min · Higienização e secagem.</small>
+                  <a class="service-cta" href="#agendamento" data-service="Corte Masculino">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 80,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Corte Infantil</strong>
+                  <small>30min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Corte Infantil">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 85,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Corte Feminino</strong>
+                  <small>45min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Corte Feminino">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 120,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Combo - Corte e Barba</strong>
+                  <small>1h</small>
+                  <a class="service-cta" href="#agendamento" data-service="Combo - Corte e Barba">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 125,00</div>
+              </div>
+            </section>
+
+            <section class="group-card">
+              <h3>Barba</h3>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Barba</strong>
+                  <small>30min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Barba">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 65,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Barboterapia</strong>
+                  <small>50min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Barboterapia">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 90,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Camuflagem de Barba</strong>
+                  <small>1h</small>
+                  <a class="service-cta" href="#agendamento" data-service="Camuflagem de Barba">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 80,00</div>
+              </div>
+            </section>
+
+            <section class="group-card">
+              <h3>Acabamento e manutenção</h3>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Pezinho</strong>
+                  <small>20min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Pezinho">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 30,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Lavagem / Shampoo</strong>
+                  <small>20min · Lavar os cabelos.</small>
+                  <a class="service-cta" href="#agendamento" data-service="Lavagem / Shampoo">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 30,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Sobrancelha</strong>
+                  <small>20min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Sobrancelha">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 40,00</div>
+              </div>
+            </section>
+          </div>
+
+          <div style="display:grid; gap:16px;">
+            <section class="group-card">
+              <h3>Coloração e transformação</h3>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Camuflagem de Cabelo</strong>
+                  <small>1h</small>
+                  <a class="service-cta" href="#agendamento" data-service="Camuflagem de Cabelo">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 90,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Reflexo</strong>
+                  <small>1h30</small>
+                  <a class="service-cta" href="#agendamento" data-service="Reflexo">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 150,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Platinado</strong>
+                  <small>2h30</small>
+                  <a class="service-cta" href="#agendamento" data-service="Platinado">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 250,00</div>
+              </div>
+            </section>
+
+            <section class="group-card">
+              <h3>Tratamentos capilares</h3>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Hidratação</strong>
+                  <small>40min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Hidratação">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 40,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Relaxamento</strong>
+                  <small>40min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Relaxamento">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 100,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Selagem</strong>
+                  <small>1h</small>
+                  <a class="service-cta" href="#agendamento" data-service="Selagem">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 150,00</div>
+              </div>
+            </section>
+
+            <section class="group-card">
+              <h3>Depilação e cuidados com a pele</h3>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Depilação - Nariz</strong>
+                  <small>15min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Depilação - Nariz">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 30,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Depilação - Orelha</strong>
+                  <small>15min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Depilação - Orelha">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 30,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Combo - Depilação - Nariz e Orelha</strong>
+                  <small>30min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Combo - Depilação - Nariz e Orelha">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 50,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-item-content">
+                  <strong>Limpeza de Pele</strong>
+                  <small>50min</small>
+                  <a class="service-cta" href="#agendamento" data-service="Limpeza de Pele">Agendar este serviço</a>
+                </div>
+                <div class="price">R$ 80,00</div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="section-title">Avaliações reais</div>
       <div class="review-grid">
         <div class="rating-box">
@@ -1422,6 +1718,309 @@
             </div>
           </div>
         </section>
+      </div>
+    </section>
+
+        <section class="section">
+      <div class="section-title">Produtos disponíveis</div>
+      <div class="card product-shell">
+        <div class="catalog-head">
+          <div>
+            <h2>Produtos profissionais</h2>
+            <p>Os mesmos itens usados e recomendados na IPA Barber Shop, organizados em um catálogo premium para compra direta pelo WhatsApp.</p>
+          </div>
+          <a class="button button-whatsapp" href="https://wa.me/5521966826675" target="_blank" rel="noopener noreferrer">Comprar pelo WhatsApp</a>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="img/produtos/po-modelador-pomada-em-po-15g.png" alt="Pó Modelador Pomada em Pó 15g" class="product-image">
+            <div class="product-body">
+              <strong>Pó Modelador Pomada em Pó 15g</strong>
+              <span>Textura leve • volume e acabamento seco</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Pó%20Modelador%20Pomada%20em%20Pó%2015g." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/locao-pos-barba-240ml.png" alt="Loção Pós Barba 240ml" class="product-image">
+            <div class="product-body">
+              <strong>Loção Pós Barba 240ml</strong>
+              <span>Conforto pós-barba • sensação refrescante</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Loção%20Pós%20Barba%20240ml." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/oleo-para-barba-30ml.png" alt="Óleo para Barba 30ml" class="product-image">
+            <div class="product-body">
+              <strong>Óleo para Barba 30ml</strong>
+              <span>Hidratação e brilho controlado</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Óleo%20para%20Barba%2030ml." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/shampoo-fortalecedor-para-barba-250ml.png" alt="Shampoo Fortalecedor para Barba 250ml" class="product-image">
+            <div class="product-body">
+              <strong>Shampoo Fortalecedor para Barba 250ml</strong>
+              <span>Limpeza e fortalecimento diário</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Shampoo%20Fortalecedor%20para%20Barba%20250ml." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/tonico-capilar-blend-de-crescimento-120ml.png" alt="Tônico Capilar Blend de Crescimento 120ml" class="product-image">
+            <div class="product-body">
+              <strong>Tônico Capilar Blend de Crescimento 120ml</strong>
+              <span>Cuidado capilar com foco em fortalecimento</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Tônico%20Capilar%20Blend%20de%20Crescimento%20120ml." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/creme-pre-barba-350g.png" alt="Creme Pré Barba 350g" class="product-image">
+            <div class="product-body">
+              <strong>Creme Pré Barba 350g</strong>
+              <span>Preparação da pele para um barbear confortável</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Creme%20Pré%20Barba%20350g." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/mascara-remocao-cravos-120ml.png" alt="Máscara Remoção de Cravos 120ml" class="product-image">
+            <div class="product-body">
+              <strong>Máscara Remoção de Cravos 120ml</strong>
+              <span>Cuidado facial e limpeza de pele</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Máscara%20Remoção%20de%20Cravos%20120ml." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/grooming-modelador-240ml.png" alt="Grooming Modelador 240ml" class="product-image">
+            <div class="product-body">
+              <strong>Grooming Modelador 240ml</strong>
+              <span>Pré-modelagem e acabamento profissional</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Grooming%20Modelador%20240ml." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/refil-shaving-gel-1kg.png" alt="Refil Shaving Gel 1kg" class="product-image">
+            <div class="product-body">
+              <strong>Refil Shaving Gel 1kg</strong>
+              <span>Alta performance para o ritual de barbear</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Refil%20Shaving%20Gel%201kg." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/condicionador-para-barba-250ml.png" alt="Condicionador para Barba 250ml" class="product-image">
+            <div class="product-body">
+              <strong>Condicionador para Barba 250ml</strong>
+              <span>Maciez e hidratação para os fios</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Condicionador%20para%20Barba%20250ml." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/pasta-efeito-black-150g-level-8.png" alt="Pasta Efeito Black 150g Level 8" class="product-image">
+            <div class="product-body">
+              <strong>Pasta Efeito Black 150g Level 8</strong>
+              <span>Efeito black • fixação elevada</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Pasta%20Efeito%20Black%20150g%20Level%208." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/pasta-capilar-matte-creme-150g-level-7.png" alt="Pasta Capilar Matte Creme 150g Level 7" class="product-image">
+            <div class="product-body">
+              <strong>Pasta Capilar Matte Creme 150g Level 7</strong>
+              <span>Matte cream • fixação forte</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Pasta%20Capilar%20Matte%20Creme%20150g%20Level%207." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/cera-capilar-matte-wax-bisnaga-120g.png" alt="Cera Capilar Matte Wax Bisnaga 120g" class="product-image">
+            <div class="product-body">
+              <strong>Cera Capilar Matte Wax Bisnaga 120g</strong>
+              <span>Acabamento seco e prático no dia a dia</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Cera%20Capilar%20Matte%20Wax%20Bisnaga%20120g." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/balm-para-barba-120ml.png" alt="Balm para Barba 120ml" class="product-image">
+            <div class="product-body">
+              <strong>Balm para Barba 120ml</strong>
+              <span>Modelagem com hidratação e maciez</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Balm%20para%20Barba%20120ml." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/cera-capilar-matte-wax-120g.png" alt="Cera Capilar Matte Wax 120g" class="product-image">
+            <div class="product-body">
+              <strong>Cera Capilar Matte Wax 120g</strong>
+              <span>Efeito matte e definição profissional</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Cera%20Capilar%20Matte%20Wax%20120g." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/modelador-efeito-teia-120g-level-6.png" alt="Modelador Efeito Teia 120g Level 6" class="product-image">
+            <div class="product-body">
+              <strong>Modelador Efeito Teia 120g Level 6</strong>
+              <span>Textura flexível e definição com personalidade</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Modelador%20Efeito%20Teia%20120g%20Level%206." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/gel-cola-black-300g.png" alt="Gel Cola Black 300g" class="product-image">
+            <div class="product-body">
+              <strong>Gel Cola Black 300g</strong>
+              <span>Fixação forte com pigmentação black</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Gel%20Cola%20Black%20300g." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/cera-capilar-matte-seco-60g.png" alt="Cera Capilar Matte Seco 60g" class="product-image">
+            <div class="product-body">
+              <strong>Cera Capilar Matte Seco 60g</strong>
+              <span>Fixação prática para acabamento seco</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Cera%20Capilar%20Matte%20Seco%2060g." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/shampoo-para-barba-250ml.png" alt="Shampoo para Barba 250ml" class="product-image">
+            <div class="product-body">
+              <strong>Shampoo para Barba 250ml</strong>
+              <span>Limpeza equilibrada para a rotina da barba</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Shampoo%20para%20Barba%20250ml." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/pasta-capilar-150g-level-2.png" alt="Pasta Capilar 150g Level 2" class="product-image">
+            <div class="product-body">
+              <strong>Pasta Capilar 150g Level 2</strong>
+              <span>Efeito médio e acabamento profissional</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Pasta%20Capilar%20150g%20Level%202." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/pasta-capilar-150g-level-4.png" alt="Pasta Capilar 150g Level 4" class="product-image">
+            <div class="product-body">
+              <strong>Pasta Capilar 150g Level 4</strong>
+              <span>Modelagem firme com visual natural</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Pasta%20Capilar%20150g%20Level%204." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/pasta-capilar-150g-level-5.png" alt="Pasta Capilar 150g Level 5" class="product-image">
+            <div class="product-body">
+              <strong>Pasta Capilar 150g Level 5</strong>
+              <span>Fixação forte com presença e definição</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Pasta%20Capilar%20150g%20Level%205." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/gel-cola-500g-incolor.png" alt="Gel Cola 500g Incolor" class="product-image">
+            <div class="product-body">
+              <strong>Gel Cola 500g Incolor</strong>
+              <span>Fixação intensa sem pigmentação</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Gel%20Cola%20500g%20Incolor." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="img/produtos/pasta-modeladora-120g-level-1.png" alt="Pasta Modeladora 120g Level 1" class="product-image">
+            <div class="product-body">
+              <strong>Pasta Modeladora 120g Level 1</strong>
+              <span>Modelagem leve para acabamento versátil</span>
+              <div class="product-price">Preço sob consulta</div>
+              <div class="product-actions">
+                <a class="service-cta" href="https://wa.me/5521966826675?text=Olá,%20tenho%20interesse%20no%20produto%20Pasta%20Modeladora%20120g%20Level%201." target="_blank" rel="noopener noreferrer">Comprar no WhatsApp</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
