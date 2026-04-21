@@ -815,6 +815,18 @@
     }
 
     .product-image {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .product-image[alt] {
+      font-size: 0;
+    }
+
+    .product-card img {
+      background-color: rgba(255,255,255,0.02);
+    }
+
+    .product-image {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: contain;
@@ -983,9 +995,6 @@
     </div>
 
     <section class="hero">
-      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="button button-outline" href="#produtos">Ver catálogo de itens</a>
-      </div>
       <div class="hero-grid">
         <div>
           <div class="tag">IPA Barber Shop · Ipanema</div>
@@ -996,9 +1005,10 @@
           </p>
 
           <div class="hero-actions">
-            <a class="button button-whatsapp" href="#agendamento">Agendar pelo WhatsApp</a>
-            <a class="button button-primary" href="https://www.trinks.com/ipa-barber-shop" target="_blank" rel="noopener noreferrer">Agendar pelo Trinks</a>
-            <a class="button button-secondary" href="https://www.google.com/maps/place/IPA+Barber+Shop+-+Barbearia/" target="_blank" rel="noopener noreferrer">Como chegar</a>
+            <a class="button button-whatsapp" href="#agendamento">📲 Agendar pelo WhatsApp</a>
+            <a class="button button-primary" href="https://www.trinks.com/ipa-barber-shop" target="_blank" rel="noopener noreferrer">📅 Agendar pelo Trinks</a>
+            <a class="button button-secondary" href="https://www.google.com/maps/place/IPA+Barber+Shop+-+Barbearia/" target="_blank" rel="noopener noreferrer">📍 Como chegar</a>
+            <a class="button button-secondary" href="#produtos">🛍️ Ver catálogo de itens</a>
           </div>
         </div>
 
@@ -1721,7 +1731,7 @@
       </div>
     </section>
 
-        <section class="section">
+        <section class="section" id="produtos">
       <div class="section-title">Produtos disponíveis</div>
       <div class="card product-shell">
         <div class="catalog-head">
